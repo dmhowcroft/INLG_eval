@@ -1,0 +1,27 @@
+---
+title: "Data preparation"
+author: "David M. Howcroft"
+output: html_notebook
+---
+
+This is a supplemental notebook to download the data and put it into the expected place for the included code.
+
+## Downloading data
+
+You can use the URL included in the README to open the Google Drive folder in a browser and download the XLSX files, or you can run the following cells.
+
+```{r}
+library(googledrive)
+```
+
+```{r}
+ls_tibble <- googledrive::drive_ls("https://drive.google.com/drive/folders/1lt2YiobxFBTz7ZlGsUKyHeBBPE76ijXa")
+ls_tibble
+```
+
+```{r}
+for (file_id in ls_tibble$id) {
+  googledrive::drive_download(as_id(file_id))
+}
+```
+
