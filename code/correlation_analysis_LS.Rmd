@@ -122,3 +122,4 @@ res <- cor.test(cohe_ratings$`Ground truth`, cohe_ratings$cohe_q2no,
 res
 res2 <- cor.test(cohe_ratings$`Ground truth`, cohe_ratings$cohe_q2no,  method="kendall")
 res2
+```
